@@ -10,11 +10,11 @@
         <div *ngFor="let field of questions" class="form-group">
           <ion-text>{{field.question_id.question_text}}</ion-text>
           <!-- [formC]="ionicForm.controls?.['email']" -->
-          <app-form-field-creater
+          <!-- <app-form-field-creator
             [formData]="field.question_id"
             [fieldType]="field.question_id.question_type"
             (ganaricChange)="handleChange($event)"
-          ></app-form-field-creater>
+          ></app-form-field-creator> -->
         </div>
 
         <div class="form-group">
