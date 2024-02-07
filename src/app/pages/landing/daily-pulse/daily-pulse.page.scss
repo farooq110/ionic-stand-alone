@@ -1,6 +1,82 @@
-.he{
+.main {
+    // background-color: lightblue;
+    // width: 100vw;
+    padding-inline: 6rem;
+
+    ion-col {
+        padding-inline: 1rem;
+    }
+
+    ion-header {
+        margin-top: 1.5rem;
+    }
+}
+
+.form-group {
+    margin-block: 2rem;
     display: flex;
-    background-color: aqua;
-    width: 100vw;
-    height: 100vh;
+    flex-direction: column;
+
+    ion-text {
+        display: flex;
+        align-items: flex-start;
+
+        p {
+            margin-right: .5rem;
+            margin-block: 0;
+        }
+
+        h2 {
+            margin-block: 0;
+        }
+    }
+}
+
+ion-grid {
+    max-width: 30rem;
+}
+
+.submit-wrapper {
+    width: 10rem;
+    align-self: end;
+}
+
+@media (max-width: 768px) {
+
+    .main {
+        padding-inline: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main {
+        padding-inline: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        padding-inline: 0px;
+    }
+}
+
+.dummy-text {
+    // background-color: aqua;
+    text-wrap: wrap;
+}
+
+ion-button::part(native) {
+    border-radius: 14px;
+    color: white;
+    background-color: #494949;
+    width: 100%;
+}
+
+ion-button {
+    width: 100%;
+    border-radius: 14px;
+    font-size: 14px;
+    height: 2.5rem;
 }

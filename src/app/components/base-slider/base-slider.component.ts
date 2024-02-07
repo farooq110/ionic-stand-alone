@@ -1,9 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-base-slider',
   templateUrl: './base-slider.component.html',
   styleUrls: ['./base-slider.component.scss'],
+  standalone:true,
+  imports: [IonicModule, CommonModule]
 })
 export class BaseSliderComponent implements OnInit {
   sliderColor: string = 'slider-red';

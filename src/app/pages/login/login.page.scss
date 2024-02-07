@@ -1,0 +1,95 @@
+.input {
+    font-weight: 300;
+    color: black;
+    width: 100%;
+}
+
+.icon-color {
+    color: black;
+}
+
+ion-item {
+    --background: #f1f1f1;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    --border-style: "none"
+}
+
+.header {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    .subtitle {
+        color: gray;
+        font-size: 0.9rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
+.signupLink {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+
+    .p {
+        font-size: 0.9em;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.forgotpassword {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        font-weight: 400;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+}
+
+.errorInput {
+    color: red;
+    font-weight: 300;
+    font-size: small;
+    padding-top: -16px;
+}
+
+.form-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 42rem;
+}
+
+.form-body {
+    width: 100%;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.form-row{
+    height: 33rem;
+}
+
+.main{
+    // background-color: aqua;
+}
+
+.loginbtn-wrapper{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}

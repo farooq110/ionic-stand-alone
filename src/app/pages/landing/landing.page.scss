@@ -1,6 +1,130 @@
-.he{
+ion-toolbar {
+    --background: #FFFFFF;
+    --color: black;
+}
+
+ion-header {
+    --background: #FFFFFF;
+}
+
+ion-content {
+    --background: #FFFFFF;
+}
+
+ion-button,
+ion-back-button {
+    color: black;
+}
+
+ion-content::part(scroll) {
+    right: unset;
+}
+
+.main-dev {
     display: flex;
-    background-color: aqua;
-    width: 100vw;
     height: 100vh;
+}
+
+@media (min-width: 768px) {
+    ion-content::part(scroll) {
+        right: unset;
+    }
+
+    .main-header {
+        max-width: 33rem;
+    }
+
+    ion-menu {
+        ion-content::part(scroll) {
+            padding-left: 1rem;
+            right: 0;
+            color: black;
+            margin-top: 1rem;
+        }
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        padding-inline: 0px;
+    }
+
+}
+
+.main-body {
+    display: flex;
+    width: 100vw;
+    color: black;
+}
+
+@media (max-width: 576px) {
+    ion-content::part(scroll) {
+        padding-left: 0rem;
+        right: 0;
+    }
+
+}
+
+.side-menu::part(container) {
+    background-color: #D9D9D9;
+    justify-content: unset;
+}
+
+
+.sidebar {
+    background-color: #D9D9D9;
+    width: fit-content;
+    display: flex;
+}
+
+.left-side {
+    background-color: #D9D9D9;
+    width: 0;
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+
+.left-side-toggle {
+    background-color: #D9D9D9;
+    width: 200px;
+    transition: 0.5s;
+    overflow-x: hidden;
+
+}
+
+.right-side {
+    background-color: #D9D9D9;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.web-menu-tooggle-button::part(native) {
+    background-color: #D9D9D9;
+    box-shadow: none;
+}
+
+.sidebar-menu-list {
+    width: 100%;
+    min-width: 6rem;
+    max-width: 15rem;
+    display: inline-block;
+    padding: 0;
+    margin-inline: 0;
+    margin-top: 4rem;
+    background-color: #D9D9D9;
+
+    ion-item {
+        background-color: #D9D9D9;
+        padding-left: 2rem;
+
+    }
+
+    ion-item::part(native) {
+        background-color: #D9D9D9;
+        color: black;
+        margin-bottom: 1rem;
+        --inner-border-width: 0;
+    }
 }

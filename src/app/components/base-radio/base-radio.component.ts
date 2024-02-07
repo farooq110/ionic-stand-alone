@@ -1,9 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from "@ionic/angular";
 
 @Component({
   selector: 'app-base-radio',
   templateUrl: './base-radio.component.html',
   styleUrls: ['./base-radio.component.scss'],
+  standalone:true,
+  imports: [IonicModule, CommonModule]
 })
 export class BaseRadioComponent implements OnInit {
   @Input() formData: any = {};

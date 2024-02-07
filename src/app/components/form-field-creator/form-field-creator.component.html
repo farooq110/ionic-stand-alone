@@ -1,20 +1,20 @@
 <div [ngSwitch]="fieldType">
   <app-base-select
     [formData]="formData"
-    *ngSwitchCase="formFields.select"
+    *ngSwitchCase="formFields?.select"
     [formC]="formC"
     (selectedChange)="valueChange($event)"
   ></app-base-select>
 
   <app-base-radio
     [formData]="formData"
-    *ngSwitchCase="formFields.radio"
+    *ngSwitchCase="formFields?.radio"
     (selectedChange)="valueChange($event)"
   ></app-base-radio>
 
   <app-base-slider
     [formData]="formData"
-    *ngSwitchCase="formFields.range"
+    *ngSwitchCase="formFields?.range"
     progressColor="slider-green"
     (selectedChange)="valueChange($event)"
   ></app-base-slider>

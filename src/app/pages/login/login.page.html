@@ -1,0 +1,107 @@
+<ion-content [fullscreen]="true">
+  <ion-grid class="main">
+    <ion-row class="ion-justify-content-center">
+      <div class="header">
+        <ion-title class="title" size="large">Welcome Back</ion-title>
+        <p class="subtitle">Sign in to access your account</p>
+      </div>
+    </ion-row>
+    <ion-row class="ion-justify-content-center form-row">
+      <ion-col size-xs="12" size-sm="11" size-md="8" size-lg="6" class="form-wrapper">
+        <form class="form-style" [formGroup]="ionicForm" novalidate>
+          <div class="form-body">
+            <ion-item>
+              <ion-input
+                placeholder="username"
+                formControlName="email"
+                class="input"
+              />
+              <ion-icon
+                slot="end"
+                class="icon-color"
+                name="person-outline"
+              ></ion-icon>
+            </ion-item>
+
+            <div
+              style="padding-top: -26px; padding-bottom: 16px"
+              *ngIf="this.ionicForm?.controls?.['email']?.touched && this.ionicForm?.controls?.['email']?.invalid"
+            >
+              <ion-text
+                *ngIf="errorControl?.['email']?.errors?.['required']"
+                class="errorInput"
+                color="danger"
+                >Email is required.</ion-text
+              >
+              <ion-text
+                *ngIf="errorControl?.['email']?.errors?.['pattern']"
+                class="errorInput"
+                color="danger"
+                >Please provide valid email.</ion-text
+              >
+            </div>
+            <ion-item>
+              <ion-input
+                type="password"
+                placeholder="password"
+                formControlName="password"
+                class="input"
+              />
+              <ion-icon
+                slot="end"
+                class="icon-color"
+                name="lock-closed-outline"
+              ></ion-icon>
+            </ion-item>
+            <div
+              style="padding-top: -26px; padding-bottom: 16px"
+              *ngIf="this.ionicForm?.controls?.['password']?.touched && this.ionicForm?.controls?.['password']?.invalid"
+            >
+              <ion-text
+                *ngIf="errorControl?.['password']?.errors?.['required']"
+                class="errorInput"
+                color="danger"
+                >password is required.</ion-text
+              >
+              <ion-text
+                *ngIf="errorControl?.['password']?.errors?.['pattern']"
+                class="errorInput"
+                color="danger"
+                >Password Must contain at least one character</ion-text
+              >
+            </div>
+
+            <div class="forgotpassword">
+              <a [routerLink]="['/forgot-password']" style="color: #ffc33f"
+                >Forgot Password?</a
+              >
+            </div>
+          </div>
+          <div class="signupLink">
+            <p class="p">
+              New memember?
+              <a [routerLink]="['/signup']" style="color: #ffc33f"
+                >SignUp now</a
+              >
+            </p>
+          </div>
+          <div class="loginbtn-wrapper">
+            <div class="ion-hide-sm-down" style="width: 100%; align-self: flex-end; margin-bottom: 2.5rem;">
+              <ion-button (click)="login()" expand="block" size="large"> Login </ion-button>
+            </div>
+          <ion-fab
+            vertical="bottom"
+            horizontal="end"
+            style="margin-bottom: 10px"
+            class="ion-hide-sm-up"
+          >
+            <ion-fab-button type="submit" (click)="login()">
+              <ion-icon name="chevron-forward"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

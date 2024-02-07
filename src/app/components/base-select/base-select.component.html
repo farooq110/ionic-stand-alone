@@ -10,6 +10,6 @@
   <ion-select-option
     *ngFor="let option of options"
     [value]="option.option_id.option_id"
-    >{{ option.option_id.option_title }}</ion-select-option
+    >{{ option?.option_id?.option_title }}</ion-select-option
   >
 </ion-select>

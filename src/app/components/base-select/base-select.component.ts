@@ -1,9 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from "@ionic/angular";
 
 @Component({
   selector: 'app-base-select',
   templateUrl: './base-select.component.html',
   styleUrls: ['./base-select.component.scss'],
+  standalone:true,
+  imports: [IonicModule, CommonModule]
 })
 export class BaseSelectComponent  implements OnInit {
   @Input() formData:any={}
