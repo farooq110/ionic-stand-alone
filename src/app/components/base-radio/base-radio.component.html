@@ -1,0 +1,14 @@
+<ion-radio-group
+  class="radio-group"
+  [value]="selectedOption"
+  [compareWith]="compareWith"
+  (ionChange)="handleChange($event)"
+>
+  <ion-row>
+    <ion-col *ngFor="let option of options">
+      <ion-radio labelPlacement="end" [value]="option.option_id.option_id">{{
+        option.option_id.option_title
+      }}</ion-radio>
+    </ion-col>
+  </ion-row>
+</ion-radio-group>

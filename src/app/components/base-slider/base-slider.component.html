@@ -1,0 +1,12 @@
+<ion-range
+  [min]="0"
+  [max]="10"
+  [pin]="true"
+  [ngClass]="setClass"
+  (ionInput)="onValueChange($event)"
+  debounce="110"
+  [value]="sliderInput"
+>
+  <ion-text slot="start">{{ min }}</ion-text>
+  <ion-text slot="end">{{ max }}</ion-text>
+</ion-range>

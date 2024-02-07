@@ -1,0 +1,9 @@
+ion-radio::part(container) {
+    border: 2px solid #ddd;
+    background-color: #ddd;
+    color: black
+}
+
+ion-radio::part(mark) {
+    background-color: #494949;
+}
