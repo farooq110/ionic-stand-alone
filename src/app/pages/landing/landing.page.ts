@@ -1,17 +1,51 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { Platform } from '@ionic/angular';
 import { Router, RouterModule } from '@angular/router';
 import { DirectusService } from 'src/app/services/directus.service';
 import { AppService } from 'src/app/services/app.service';
-import { Platform } from '@ionic/angular';
+import {
+  IonButton,
+  IonBackButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonMenu,
+  IonText,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
+import { addIcons } from "ionicons";
+import { menuSharp } from "ionicons/icons";
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.page.html',
   styleUrls: ['./landing.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    
+    IonButton,
+    IonButtons,
+    IonBackButton,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonMenu,
+    IonText,
+    IonTitle,
+    IonToolbar,
+  ],
 })
 export class LandingPage implements OnInit {
   isMobileMemuActive = false;
@@ -24,6 +58,7 @@ export class LandingPage implements OnInit {
     private platform: Platform,
     private appService: AppService
   ) {
+    addIcons({menuSharp})
     this.appService.isScroll$.subscribe((isScroll) => {
       this.scrollY = isScroll;
     });
