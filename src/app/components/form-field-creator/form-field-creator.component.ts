@@ -3,7 +3,7 @@ import { FormFields } from 'src/app/common/enum';
 import { BaseRadioComponent } from '../base-radio/base-radio.component';
 import { BaseSelectComponent } from '../base-select/base-select.component';
 import { BaseSliderComponent } from '../base-slider/base-slider.component';
-import { NgSwitch } from '@angular/common';
+import { NgSwitch, NgSwitchCase } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -14,6 +14,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     IonicModule,
     NgSwitch,
+    NgSwitchCase,
     BaseRadioComponent,
     BaseSelectComponent,
     BaseSliderComponent,

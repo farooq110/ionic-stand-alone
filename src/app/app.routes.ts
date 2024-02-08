@@ -1,20 +1,23 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  
   {
     path: '',
-    loadComponent: () => import('./pages/landing/landing.page').then( m => m.LandingPage),
-    children:[
+    loadComponent: () =>
+      import('./pages/landing/landing.page').then((m) => m.LandingPage),
+    children: [
       {
         path: 'daily-pulse',
-        loadComponent: () => import('./pages/landing/daily-pulse/daily-pulse.page').then( m => m.DailyPulsePage)
-      }
-    ]
+        loadComponent: () =>
+          import('./pages/landing/daily-pulse/daily-pulse.page').then(
+            (m) => m.DailyPulsePage
+          ),
+      },
+    ],
   },
   {
     path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+    loadComponent: () =>
+      import('./pages/login/login.page').then((m) => m.LoginPage),
   },
-  
 ];

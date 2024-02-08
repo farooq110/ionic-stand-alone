@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import {
   FormBuilder,
   FormGroup,
@@ -7,11 +7,24 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { DirectusService } from 'src/app/services/directus.service';
+import {
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonTitle,
+  IonItem,
+  IonInput,
+  IonIcon,
+  IonText,
+  IonFab,
+  IonFabButton,
+  IonButton,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +32,19 @@ import { DirectusService } from 'src/app/services/directus.service';
   styleUrls: ['./login.page.scss'],
   standalone: true,
   imports: [
-    IonicModule,
-    CommonModule,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonTitle,
+    IonItem,
+    IonInput,
+    IonIcon,
+    IonText,
+    IonFab,
+    IonFabButton,
+    IonButton,
+    NgIf,
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
