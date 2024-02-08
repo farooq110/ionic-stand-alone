@@ -3,7 +3,7 @@ import { FormFields } from 'src/app/common/enum';
 import { BaseRadioComponent } from '../base-radio/base-radio.component';
 import { BaseSelectComponent } from '../base-select/base-select.component';
 import { BaseSliderComponent } from '../base-slider/base-slider.component';
-import { CommonModule} from '@angular/common';
+import { NgSwitch } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -11,7 +11,13 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './form-field-creator.component.html',
   styleUrls: ['./form-field-creator.component.scss'],
   standalone: true,
-  imports: [IonicModule,CommonModule,BaseRadioComponent, BaseSelectComponent, BaseSliderComponent],
+  imports: [
+    IonicModule,
+    NgSwitch,
+    BaseRadioComponent,
+    BaseSelectComponent,
+    BaseSliderComponent,
+  ],
 })
 export class FormFieldCreatorComponent implements OnInit {
   formFields = FormFields;
