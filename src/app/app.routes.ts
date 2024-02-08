@@ -13,6 +13,15 @@ export const routes: Routes = [
             (m) => m.DailyPulsePage
           ),
       },
+      {
+        path: 'daily-status',
+        loadComponent: () => import('./pages/daily-status/daily-status.page').then( m => m.DailyStatusPage)
+      },
+      {
+        path:'',
+        redirectTo:"daily-pulse",
+        pathMatch:"full"
+      }
     ],
   },
   {
@@ -24,4 +33,5 @@ export const routes: Routes = [
     path: 'signup',
     loadComponent: () => import('./pages/signup/signup.page').then( m => m.SignupPage)
   },
+  
 ];

@@ -1,0 +1,98 @@
+<div class="main">
+  <ion-header class="ion-no-border ion-hide-md-down main-header">
+      <ion-title class="main-title">Daily Pulse</ion-title>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text class="text-color"
+          >Which Project are you working on?</ion-text
+        >
+        <ion-select
+          placeholder="Select fruit"
+          label-placement="stacked"
+          fill="outline"
+        >
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-text class="text-color"
+          >Do I have enough worked assigned to me today?</ion-text
+        >
+        <div class="radio-wrapper">
+          <ion-radio-group class="radio-group" value="no">
+            <ion-row>
+              <ion-col>
+                <ion-radio labelPlacement="end" value="yes">Yes</ion-radio>
+              </ion-col>
+              <ion-col>
+                <ion-radio labelPlacement="end" value="no">No</ion-radio>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-text class="text-color">Work Summary</ion-text>
+        <div class="radio-wrapper">
+          <ion-textarea
+            rows="5"
+            labelPlacement="stacked"
+            fill="outline"
+            placeholder="Enter work summry"
+          ></ion-textarea>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-text class="text-color"
+          >Are you blocked or dependent to proceed with your tasks
+          today?</ion-text
+        >
+        <div class="radio-wrapper">
+          <ion-radio-group class="radio-group" value="no">
+            <ion-row>
+              <ion-col>
+                <ion-radio labelPlacement="end" value="yes">Yes</ion-radio>
+              </ion-col>
+              <ion-col>
+                <ion-radio labelPlacement="end" value="no">No</ion-radio>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-text class="text-color"
+          >Please mention the blocker or dependency you are facing.</ion-text
+        >
+        <div class="radio-wrapper">
+          <ion-textarea
+            rows="5"
+            labelPlacement="stacked"
+            fill="outline"
+            placeholder="Enter work summry"
+          ></ion-textarea>
+        </div>
+        <ion-toolbar>
+          <ion-button shape="round" slot="end">Submit</ion-button>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

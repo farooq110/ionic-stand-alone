@@ -31,7 +31,6 @@ import { menuSharp } from "ionicons/icons";
     CommonModule,
     FormsModule,
     RouterModule,
-    
     IonButton,
     IonButtons,
     IonBackButton,

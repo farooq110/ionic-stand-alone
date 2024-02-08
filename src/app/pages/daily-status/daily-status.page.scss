@@ -1,0 +1,91 @@
+
+
+ion-header {
+    --background: #FFFFFF;
+}
+
+ion-select {
+    color: black;
+    margin-top: 1rem;
+}
+
+ion-grid {
+    max-width: 30rem;
+}
+
+ion-row {
+    margin-top: 1rem;
+}
+
+ion-radio::part(container) {
+    border: 2px solid #ddd;
+    background-color: #ddd;
+    color: black
+}
+
+ion-radio::part(mark) {
+    background-color: #494949;
+}
+
+.text-color,
+ion-radio,
+ion-textarea,
+ion-button {
+    color: black;
+}
+
+.radio-wrapper {
+    margin-top: 1rem;
+}
+
+ion-col {
+    // ion-button::part(native) {
+    //     width: 10rem;
+    //     height: 2.5rem;
+    //     font-size: 14px;
+    //     border-radius: 14px;
+    //     color: white
+    // }
+    ion-button::part(native) {
+        border-radius: 14px;
+        color: white;
+        background-color: #494949;
+        width: 100%;
+    }
+    
+    ion-button {
+        width: 100%;
+        border-radius: 14px;
+        font-size: 14px;
+        height: 2.5rem;
+    }
+
+}
+
+.main{
+    padding-left: 6rem;
+}
+
+@media (min-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        padding-inline: 0px;
+    }
+    .main{
+        padding-inline: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .main{
+        padding-inline: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main{
+        padding-inline: 1rem;
+    }
+}
