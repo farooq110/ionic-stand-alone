@@ -63,8 +63,8 @@ ion-grid {
 }
 
 .dummy-text {
-    // background-color: aqua;
-    text-wrap: wrap;
+   width: calc( 100vw - 4.5rem );
+   display: inline-block;
 }
 
 ion-button::part(native) {
