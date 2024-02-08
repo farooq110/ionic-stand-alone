@@ -1,0 +1,113 @@
+.title-header {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-color {
+    color: black;
+}
+
+.header {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    .subtitle {
+        color: gray;
+        font-size: 0.9rem;
+
+    }
+
+    .title {
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.input {
+    font-weight: 300;
+    color: black;
+}
+
+ion-item {
+    --background: #f1f1f1;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    --border-style: "none"
+}
+
+.loginLink {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+
+    .p {
+        font-size: 0.9em;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.errorInput {
+    color: red;
+    font-weight: 300;
+    font-size: small;
+    padding-top: -16px;
+    display: flex;
+    ion-item {
+        --background: red !important;
+    }
+}
+
+.invalid {
+    ion-item {
+        --background: red !important;
+    }
+}
+
+.form-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 42rem;
+}
+
+.form-body {
+    width: 100%;
+}
+
+.googlebtn {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.loginbtn-wrapper{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.form-row{
+    height: 37rem;
+}

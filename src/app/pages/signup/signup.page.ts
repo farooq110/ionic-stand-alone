@@ -7,13 +7,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router, RouterModule } from '@angular/router';
-import { DirectusService } from 'src/app/services/directus.service';
 import {
   IonContent,
   IonGrid,
   IonRow,
+  IonHeader,
+  IonToolbar,
   IonCol,
   IonTitle,
   IonItem,
@@ -23,17 +22,21 @@ import {
   IonFab,
   IonFabButton,
   IonButton,
-  LoadingController,
   ToastController,
+  LoadingController
 } from '@ionic/angular/standalone';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-signup',
+  templateUrl: './signup.page.html',
+  styleUrls: ['./signup.page.scss'],
   standalone: true,
   imports: [
     IonContent,
+    IonHeader,
+    IonToolbar,
     IonGrid,
     IonRow,
     IonCol,
@@ -45,25 +48,36 @@ import {
     IonFab,
     IonFabButton,
     IonButton,
+    RouterLink,
     NgIf,
     FormsModule,
-    RouterModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
 })
-export class LoginPage implements OnInit {
+export class SignupPage implements OnInit {
   ionicForm!: FormGroup;
+
   constructor(
     private toastController: ToastController,
     private loadingController: LoadingController,
     private authService: AuthService,
     private router: Router,
-    public formBuilder: FormBuilder,
-    private directus: DirectusService
+    public formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {
+    // this.signUP()
     this.ionicForm = this.formBuilder.group({
+      fullname: ['', [Validators.required]],
+      contact: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[0-9]*$'),
+          Validators.minLength(10),
+          // Validators.min(10)
+        ],
+      ],
       email: [
         '',
         [
@@ -74,39 +88,50 @@ export class LoginPage implements OnInit {
       password: [
         '',
         [
-          // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
+          // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-8])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
           Validators.required,
         ],
       ],
     });
   }
+  get errorControl() {
+    return this.ionicForm.controls;
+  }
+  async signUpWithGoogle() {
+    console.log('signUpWithGoogle');
+  }
 
-  async login() {
+  async signUP() {
     if (this.ionicForm.invalid) return this.presentToast('form is invalid');
     const loading = await this.loadingController.create();
     await loading.present();
     if (this.ionicForm.valid) {
-      const user = await this.directus.login(this.ionicForm.value);
-      loading.dismiss();
-      if (!user) {
-        return this.presentToast('invalid user');
+      const user: any = await this.authService
+        .registerUser(this.ionicForm.value)
+        .catch((err: any) => {
+          this.presentToast(err);
+          console.log(err);
+          loading.dismiss();
+        });
+
+      if (user) {
+        loading.dismiss();
+        this.router.navigate(['/login']);
       }
-      this.router.navigate(['/daily-pulse']);
     } else {
       return console.log('Please provide all the required values!');
     }
   }
-
-  get errorControl() {
-    return this.ionicForm.controls;
+  signUpUsingPhonenumber(contact: string) {
+    this.authService.signInWithPhoneNumber(contact);
   }
+  async presentToast(message: string) {
+    console.log(message);
 
-  async presentToast(message: any) {
     const toast = await this.toastController.create({
       message: message,
       duration: 1500,
       position: 'top',
-      color: 'danger',
     });
 
     await toast.present();
