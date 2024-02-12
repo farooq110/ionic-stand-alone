@@ -87,6 +87,7 @@ export class LoginPage implements OnInit {
     await loading.present();
     if (this.ionicForm.valid) {
       const user = await this.directus.login(this.ionicForm.value);
+      console.log(user,"=================")
       loading.dismiss();
       if (!user) {
         return this.presentToast('invalid user');

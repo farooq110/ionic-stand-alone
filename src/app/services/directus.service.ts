@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { LocalStoreService } from './local-store.service';
-import { authentication, createDirectus, createItem, readItems, rest } from '@directus/sdk';
+import { authentication, createDirectus, createItem, readItems, refresh, rest } from '@directus/sdk';
 import { environment } from 'src/environments/environment';
+import { jwtDecode } from "jwt-decode"
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,14 @@ export class DirectusService {
 
   async refresh() {
     try {
-      return await this.client.refresh();
+      const localeTokes = this.ls.getItem(this.authKey)
+      const refreshToken = localeTokes.refresh_token
+      // const decodedToken = jwtDecode(refreshToken);
+      // console.log(decodedToken, "decodedToken");
+      if(!refreshToken) return null
+      const refreshTokens = await this.client.request(refresh("json",refreshToken));
+      console.log(refreshTokens,"refresh")
+      return refreshTokens;
     } catch (error) {
       console.log(error)
       return null
@@ -85,5 +93,23 @@ export class DirectusService {
       console.log(error)
       return []
     }
+  }
+
+  isTokenExpired(){
+    try {
+      const currentDate = new Date()
+      const tokens = this.ls.getItem(this.authKey)
+      if(!tokens) return true
+      const expiredAt = tokens.expired_at
+      console.log(currentDate >=expiredAt, "check")
+      if(currentDate >=expiredAt) return false
+      return true
+    } catch (error) {
+      console.log(error)
+      return true
+    }
+  }
+  isLoggedin() {
+    return !!this.ls.getItem(this.authKey);
   }
 }

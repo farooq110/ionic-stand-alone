@@ -41,7 +41,7 @@ export class DailyPulsePage implements OnInit {
     private appService: AppService,
     private directus: DirectusService
   ) {
-    this.appService.setIsScroll(true);
+    // this.appService.setIsScroll(true);
   }
 
   ngOnInit() {
@@ -57,9 +57,11 @@ export class DailyPulsePage implements OnInit {
   }
 
   async onSubmit() {
-    console.log(this.payload, 'submit');
-    const a = await this.directus.submitAnswers(this.payload);
-    console.log(a);
+    const expire = await this.directus.refresh()
+    console.log(expire,'0000000')
+    // console.log(this.payload, 'submit');
+    // const a = await this.directus.submitAnswers(this.payload);
+    // console.log(a);
   }
 
   handleChange(data: any) {

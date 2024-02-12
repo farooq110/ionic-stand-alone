@@ -55,6 +55,8 @@ ion-content::part(scroll) {
     display: flex;
     width: 100vw;
     color: black;
+    margin-bottom: 1.5rem;
+    overflow-y: scroll;
 }
 
 @media (max-width: 576px) {

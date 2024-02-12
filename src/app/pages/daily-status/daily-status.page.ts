@@ -16,6 +16,7 @@ import {
   IonTextarea,
   IonButton,
 } from '@ionic/angular/standalone';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-daily-status',
@@ -40,7 +41,11 @@ import {
   ],
 })
 export class DailyStatusPage implements OnInit {
-  constructor() {}
+  constructor(
+    private appService: AppService,
+  ) {
+    // this.appService.setIsScroll(true);
+  }
 
   ngOnInit() {}
 }

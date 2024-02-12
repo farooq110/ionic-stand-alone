@@ -6,6 +6,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
+        <div class="form-group">
         <ion-text class="text-color"
           >Which Project are you working on?</ion-text
         >
@@ -18,11 +19,9 @@
           <ion-select-option value="banana">Banana</ion-select-option>
           <ion-select-option value="orange">Orange</ion-select-option>
         </ion-select>
-      </ion-col>
-    </ion-row>
+      </div>
 
-    <ion-row>
-      <ion-col>
+      <div class="form-group">
         <ion-text class="text-color"
           >Do I have enough worked assigned to me today?</ion-text
         >
@@ -38,11 +37,8 @@
             </ion-row>
           </ion-radio-group>
         </div>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
+      </div>
+      <div class="form-group">
         <ion-text class="text-color">Work Summary</ion-text>
         <div class="radio-wrapper">
           <ion-textarea
@@ -52,11 +48,8 @@
             placeholder="Enter work summry"
           ></ion-textarea>
         </div>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
+      </div>
+      <div class="form-group">
         <ion-text class="text-color"
           >Are you blocked or dependent to proceed with your tasks
           today?</ion-text
@@ -73,11 +66,9 @@
             </ion-row>
           </ion-radio-group>
         </div>
-      </ion-col>
-    </ion-row>
+      </div>
 
-    <ion-row>
-      <ion-col>
+      <div class="form-group">
         <ion-text class="text-color"
           >Please mention the blocker or dependency you are facing.</ion-text
         >
@@ -89,10 +80,35 @@
             placeholder="Enter work summry"
           ></ion-textarea>
         </div>
+      </div>
+
+      <div class="form-group">
+        <div class="submit-wrapper">
+          <ion-button
+            shape="round"
+            slot="end"
+            type="submit"
+          >
+            Submit
+          </ion-button>
+          <!-- <app-submit-button>Submit</app-submit-button> -->
+        </div>
+      </div>
+      </ion-col>
+    </ion-row>
+
+
+
+  
+   
+
+    <!-- <ion-row>
+      <ion-col>
+        
         <ion-toolbar>
           <ion-button shape="round" slot="end">Submit</ion-button>
         </ion-toolbar>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
 </div>
